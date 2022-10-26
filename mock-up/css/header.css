@@ -1,0 +1,40 @@
+/* source-sans-pro-regular - latin */
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/source-sans-pro-v21-latin-regular.eot');
+    /* IE9 Compat Modes */
+    src: local(''),
+        url('../fonts/source-sans-pro-v21-latin-regular.eot?#iefix') format('embedded-opentype'),
+        /* IE6-IE8 */
+        url('../fonts/source-sans-pro-v21-latin-regular.woff2') format('woff2'),
+        /* Super Modern Browsers */
+        url('../fonts/source-sans-pro-v21-latin-regular.woff') format('woff'),
+        /* Modern Browsers */
+        url('../fonts/source-sans-pro-v21-latin-regular.ttf') format('truetype'),
+        /* Safari, Android, iOS */
+        url('../fonts/source-sans-pro-v21-latin-regular.svg#SourceSansPro') format('svg');
+    /* Legacy iOS */
+}
+
+.container-fluid {
+    background-color: black;
+    color: white;
+}
+
+.navbar-brand {
+    color: white;
+    font-family: 'Source Sans Pro';
+    font-weight: 600;
+}
+
+#myColor {
+    color: red;
+}
+
+.navbar-toggler {
+    background-color: white;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
