@@ -30,6 +30,7 @@
     color: white;
     font-family: 'Source Sans Pro';
     font-weight: 600;
+    margin-left: 10px;
 }
 
 #myColor {
@@ -38,4 +39,11 @@
 
 .navbar-toggler {
     background-color: white;
+    margin-right: 10px;
+}
+
+@media (min-width: 768px) {
+    #logo {
+        margin-left: 150px;
+    }
 }
