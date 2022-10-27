@@ -19,7 +19,10 @@
 }
 
 /* ajout d'un commentaire */
+.navbar {}
+
 .container-fluid {
+
     background-color: black;
     color: white;
     font-family: 'Source Sans Pro';
@@ -46,5 +49,10 @@
 @media (min-width: 768px) {
     #logo {
         margin-left: 150px;
+    }
+
+    .navbar {
+        position: relative;
+        width: 100%;
     }
 }
