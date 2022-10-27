@@ -1,18 +1,24 @@
-.btn{
+.btn {
     background-color: red;
     float: right;
     border: none;
 }
 
-.btn:hover{
+.btn:hover {
     background-color: #CD5C5C;
 }
 
-h1{
-    margin-left: 162px;
+h1 {
+    margin-left: 22px;
 }
 
-form{
-    left: 100px;
-    right: 100px;
+.container {
+    margin: auto;
+    max-width: 60%;
+}
+
+@media (min-width: 768px) {
+    h1 {
+        margin-left: 162px;
+    }
 }
