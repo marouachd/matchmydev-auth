@@ -1,0 +1,13 @@
+.btn-primary {
+    background-color: #FF0000;
+    border: none;
+    float: right;
+}
+
+.btn-primary:hover {
+    background-color: #CD5C5C;
+}
+
+h1 {
+    margin-left: 160px;
+}
