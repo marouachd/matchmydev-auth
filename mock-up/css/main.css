@@ -1,11 +1,16 @@
 .btn {
-    background-color: red;
+    background-color: #A9A9A9;
     float: right;
     border: none;
+    box-shadow: nones;
 }
 
 .btn:hover {
-    background-color: #CD5C5C;
+    background-color: #DCDCDC;
+}
+
+.btn:active{
+    background-color: black;
 }
 
 h1 {
@@ -21,4 +26,15 @@ h1 {
     h1 {
         margin-left: 162px;
     }
+}
+
+.requiredStar::before{
+    color: #CD5C5C;
+    font-weight: bold;
+    content: " *";
+}
+
+.form-control:focus{
+    border-color: #DCDCDC;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(220, 220, 220, 0.8);
 }
