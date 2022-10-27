@@ -7,3 +7,12 @@
 .btn:hover{
     background-color: #CD5C5C;
 }
+
+h1{
+    margin-left: 162px;
+}
+
+form{
+    left: 100px;
+    right: 100px;
+}
