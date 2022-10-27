@@ -1,16 +1,17 @@
-.btn {
+.btn-primary {
     background-color: #A9A9A9;
-    float: right;
+    width: 100%;
     border: none;
-    box-shadow: nones;
+    box-shadow: none;
 }
 
-.btn:hover {
-    background-color: #DCDCDC;
+.btn-primary:hover {
+    background-color: #34282C;
 }
 
-.btn:active{
+.btn-primary:focus{
     background-color: black;
+    box-shadow: none;
 }
 
 h1 {
@@ -37,4 +38,7 @@ h1 {
 .form-control:focus{
     border-color: #DCDCDC;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(220, 220, 220, 0.8);
+}
+main{
+    margin-top: 50px;
 }
