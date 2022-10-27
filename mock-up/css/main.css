@@ -29,13 +29,13 @@ h1 {
     }
 }
 
-.requiredStar::before{
+.requiredStar::before {
     color: #CD5C5C;
     font-weight: bold;
     content: " *";
 }
 
-.form-control:focus{
+.form-control:focus {
     border-color: #DCDCDC;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(220, 220, 220, 0.8);
 }

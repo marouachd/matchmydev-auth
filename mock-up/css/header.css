@@ -19,10 +19,10 @@
 }
 
 /* ajout d'un commentaire */
-.navbar {}
 
 .container-fluid {
-
+    position: fixed;
+    top: 0px;
     background-color: black;
     color: white;
     font-family: 'Source Sans Pro';
@@ -51,8 +51,7 @@
         margin-left: 150px;
     }
 
-    .navbar {
-        position: relative;
-        width: 100%;
+    .container-fluid {
+        position: static;
     }
 }
