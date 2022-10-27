@@ -26,7 +26,7 @@
     background-color: black;
     color: white;
     font-family: 'Source Sans Pro';
-    min-height: 60px;
+
 }
 
 
@@ -34,7 +34,7 @@
     color: white;
     font-family: 'Source Sans Pro';
     font-weight: 600;
-    margin-left: 10px;
+
 }
 
 #myColor {
@@ -43,13 +43,11 @@
 
 .navbar-toggler {
     background-color: white;
-    margin-right: 10px;
+
 }
 
 @media (min-width: 768px) {
-    #logo {
-        margin-left: 150px;
-    }
+    #logo {}
 
     .container-fluid {
         position: static;
