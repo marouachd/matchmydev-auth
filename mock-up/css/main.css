@@ -1,11 +1,16 @@
 .btn {
-    background-color: red;
+    background-color: #A9A9A9;
     float: right;
     border: none;
 }
 
 .btn:hover {
-    background-color: #CD5C5C;
+    background-color: #DCDCDC;
+}
+
+.btn:active {
+    background-color: black;
+
 }
 
 h1 {
@@ -21,4 +26,10 @@ h1 {
     h1 {
         margin-left: 162px;
     }
+}
+
+.requiredStar::after {
+    font-weight: bold;
+    color: red;
+    content: " *";
 }
