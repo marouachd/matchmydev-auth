@@ -19,46 +19,56 @@
 
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-md navbar-light bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#"><span id="logo">match<span id="myColor">my</span>dev</span></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-md navbar-dark container-xl">
+            <a class="navbar-brand" href="#"><span id="logo">match<span id="myColor">my</span>dev</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
 
-                    </div>
                 </div>
             </div>
         </nav>
     </header>
 
     <main>
-        <h1>Sign up</h1>
-        <div class="container">
-            <form>
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label requiredIcon ">Internal identifier</label>
-                    <input class="form-control" id="exampleInputEmail1">
-                    <div id="emailHelp" class="form-text">e.g. FMARSHA010406</div>
+        <div class="container-xl my-3">
+            <div class="mb-3">
+                <h1>Sign up</h1>
+            </div>
+
+
+            <div class="row">
+
+
+                <div class="col-6">
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label requiredIcon ">Internal
+                                identifier</label>
+                            <input class="form-control" id="exampleInputEmail1">
+                            <div id="emailHelp" class="form-text">e.g. FMARSHA010406</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label requiredIcon">Internal email</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1">
+                            <div id="emailHelp" class="form-text">e.g. first.last@domain.com</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label requiredIcon">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                            <div id="emailHelp" class="form-text">e.g. Garfield2022!</div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Sign Up</button>
+                    </form>
+
                 </div>
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label requiredIcon">Internal email</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1">
-                    <div id="emailHelp" class="form-text">e.g. first.last@domain.com</div>
-                </div>
-                <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label requiredIcon">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
-                    <div id="emailHelp" class="form-text">e.g. Garfield2022!</div>
-                </div>
-                <button type="submit" class="btn btn-primary">Sign Up</button>
-            </form>
-        </diV>
+            </div>
+
+
     </main>
 </body>
 
