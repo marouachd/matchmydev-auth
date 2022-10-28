@@ -16,10 +16,10 @@
 
 h1 {}
 
-.container {
+/*.container {
     margin: auto;
-    max-width: 50%;
-}
+    max-width: 60%;
+}*/
 
 @media (min-width: 768px) {
     h1 {}
