@@ -1,34 +1,21 @@
 /* source-sans-pro-regular - latin */
-@font-face {
-    font-family: 'Source Sans Pro';
-    font-style: normal;
-    font-weight: 400;
-    src: url('../fonts/source-sans-pro-v21-latin-regular.eot');
-    /* IE9 Compat Modes */
-    src: local(''),
-        url('../fonts/source-sans-pro-v21-latin-regular.eot?#iefix') format('embedded-opentype'),
-        /* IE6-IE8 */
-        url('../fonts/source-sans-pro-v21-latin-regular.woff2') format('woff2'),
-        /* Super Modern Browsers */
-        url('../fonts/source-sans-pro-v21-latin-regular.woff') format('woff'),
-        /* Modern Browsers */
-        url('../fonts/source-sans-pro-v21-latin-regular.ttf') format('truetype'),
-        /* Safari, Android, iOS */
-        url('../fonts/source-sans-pro-v21-latin-regular.svg#SourceSansPro') format('svg');
-    /* Legacy iOS */
-}
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
 
 /* ajout d'un commentaire */
 
 header {
-    background-color: rgb(0, 0, 0);
-    font-family: 'Source Sans Pro';
+
+    background-color: black;
+    font-family: 'Source Sans Pro', sans-serif;
+
+
 }
 
 
 #logo {
     color: white;
-    font-family: 'Source Sans Pro';
+    font-family: 'Source Sans Pro', sans-serif;
     font-weight: 600;
     font-size: 2rem;
 
@@ -36,4 +23,10 @@ header {
 
 #myColor {
     color: red;
+}
+
+@media(max-width: 768px) {
+    .navbar-brand {
+        padding-left: 4%;
+    }
 }

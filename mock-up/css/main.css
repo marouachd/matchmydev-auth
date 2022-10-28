@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+
 /* source-sans-pro-regular - latin */
 @font-face {
     font-family: 'Source Sans Pro';
@@ -23,7 +25,6 @@
     border: none;
     width: 100%;
     box-shadow: none;
-    letter-spacing: 0.1rem;
 }
 
 .btn-primary:hover {
@@ -35,24 +36,17 @@
     box-shadow: none !important;
 }
 
-h1 {
-    border: 2px solid red;
-    margin-left: 1em;
-    margin-bottom: 1em;
+h1 {}
+
+.container {
+    margin: auto;
+    max-width: 50%;
 }
 
-
-
-@media (min-width: 768px) {
-
-    .container {
-        max-width: 40%;
-    }
-
-    .btn-primary {
-        width: fit-content;
-        float: right;
-    }
+.btn-primary {
+    width: fit-content;
+    float: right;
+}
 }
 
 
