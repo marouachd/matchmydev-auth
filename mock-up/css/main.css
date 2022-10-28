@@ -48,9 +48,6 @@ main {
     font-weight: 600;
 }
 
-h1 {
-    padding-left: 20%;
-}
 
 @media (max-width: 768px) {
 
