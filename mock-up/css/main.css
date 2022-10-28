@@ -10,7 +10,7 @@
 }
 
 .btn-primary:focus {
-
+    background-color: black;
     box-shadow: none !important;
 }
 
