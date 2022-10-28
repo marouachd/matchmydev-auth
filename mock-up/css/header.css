@@ -20,13 +20,9 @@
 
 /* ajout d'un commentaire */
 
-.container-fluid {
-    position: fixed;
-    top: 0px;
-    background-color: black;
-    color: white;
+header {
+    background-color: rgb(0, 0, 0);
     font-family: 'Source Sans Pro';
-
 }
 
 
@@ -34,22 +30,10 @@
     color: white;
     font-family: 'Source Sans Pro';
     font-weight: 600;
+    font-size: 2rem;
 
 }
 
 #myColor {
     color: red;
-}
-
-.navbar-toggler {
-    background-color: white;
-
-}
-
-@media (min-width: 768px) {
-    #logo {}
-
-    .container-fluid {
-        position: static;
-    }
 }
