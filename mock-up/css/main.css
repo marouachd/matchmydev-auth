@@ -14,6 +14,11 @@
     box-shadow: none !important;
 }
 
+.col-6{
+    margin-left: auto;
+    margin-right: auto;
+}
+
 h1 {}
 
 /*.container {
@@ -21,12 +26,12 @@ h1 {}
     max-width: 60%;
 }*/
 
-@media (min-width: 768px) {
-    h1 {}
-
+@media (max-width: 768px) {
+    .col-6{
+        width: 90vw;
+    }
     .btn-primary {
-        width: fit-content;
-        float: right;
+        width: 100%;
     }
 }
 
