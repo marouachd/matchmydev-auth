@@ -1,32 +1,26 @@
 /* source-sans-pro-regular - latin */
 
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
-
-/* ajout d'un commentaire */
-
 header {
 
-    background-color: black;
-    font-family: 'Source Sans Pro', sans-serif;
+    background-color: var(--main-dark-color);
+    font-family: 'Source Code Pro', sans-serif;
 
 
 }
 
 
-#logo {
+.logo {
     color: white;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Source Code Pro', monospace;
     font-weight: 600;
     font-size: 2rem;
 
 }
 
-#myColor {
-    color: red;
+.my-color {
+    color: var(--main-red-color);
 }
 
-@media(max-width: 768px) {
-    .navbar-brand {
-        padding-left: 4%;
-    }
+.form-text {
+    color: var(--main-grey-color);
 }
