@@ -49,18 +49,21 @@
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label requiredIcon ">Internal
                                 identifier</label>
-                            <input class="form-control" id="exampleInputEmail1">
+                            <input class="form-control" id="exampleInputEmail1" required pattern="[A-Z]{2,7}[0-9]{6}">
                             <div id="emailHelp" class="form-text">e.g. FMARSHA010406</div>
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label requiredIcon">Internal email</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1">
+                            <input type="email" class="form-control" id="exampleInputEmail1" required
+                                pattern="[a-zA-Z]+\.[a-zA-Z]+@[a-z]+\.[a-z]{2,4}$">
                             <div id="emailHelp" class="form-text">e.g. first.last@domain.com</div>
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label requiredIcon">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
-                            <div id="emailHelp" class="form-text">e.g. Garfield2022!</div>
+                            <input type="password" class="form-control" id="exampleInputPassword1" required
+                                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[%||*||!]).{8,42}">
+                            <div id=" emailHelp" class="form-text">e.g. Garfield2022!
+                            </div>
                         </div>
                         <button type="submit" class="btn btn-primary">Sign Up</button>
                     </form>
