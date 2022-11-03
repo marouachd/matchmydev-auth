@@ -2,6 +2,7 @@ import { messages } from "../messages.js";
 
 function renderHeader() {
     const content = `
+    <div class="fixed-top">
         <nav class="navbar navbar-expand-md navbar-dark container-xl">
             <a class="navbar-brand" href="#">${messages.brand}</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
@@ -15,11 +16,11 @@ function renderHeader() {
                 </div>
             </div>
         </nav>
+    </div>
     `
 
     const header = document.getElementById("header");
     header.innerHTML = content;
-    header.classList = "fixed-top";
 }
 
 export { renderHeader };
