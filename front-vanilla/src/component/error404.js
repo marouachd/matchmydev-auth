@@ -1,10 +1,10 @@
 function renderError404() {
     const error404Content = `
-
-    <p>"Page Not Found"</p>
+    <h1>Oops ! Error 404</h1>
+    <h2>"Page Not Found"</h2>
 
     `
-    let main = document.getElementById("main");
+    const main = document.getElementById("main");
     main.innerHTML = error404Content;
 }
 
