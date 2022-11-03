@@ -4,6 +4,7 @@ import { renderError404 } from "./component/error404.js";
 
 window.addEventListener('hashchange', (event) => route(event));
 
+
 function route() {
     const hash = window.location.hash;
     if (hash == "" || hash == "index.html") {
