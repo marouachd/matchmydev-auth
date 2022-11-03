@@ -43,22 +43,23 @@
             <div class=" col-12 col-md-6 mx-auto">
                 <form>
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label required ">Internal
+                        <label for="internalIdentifier" class="form-label required ">Internal
                             identifier</label>
-                        <input class="form-control" id="exampleInputEmail1" required pattern="[A-Z]{2,7}[0-9]{6}">
-                        <div id="emailHelp" class="form-text">e.g. FMARSHA010406</div>
+                        <input class="form-control" name="internalIdentifier" id="internalIdentifier" required
+                            pattern="[A-Z]{2,7}[0-9]{6}">
+                        <div class="form-text">e.g. FMARSHA010406</div>
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label required">Internal email</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" required
+                        <label for="internalEmail" class="form-label required">Internal email</label>
+                        <input type="email" name="internalEmail" class="form-control" id="internalEmail" required
                             pattern="[a-zA-Z]+.[a-zA-Z]+@[a-z]+.[a-z]{2,4}$">
-                        <div id="emailHelp" class="form-text">e.g. first.last@domain.com</div>
+                        <div class="form-text">e.g. first.last@domain.com</div>
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label required">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" required
+                        <label for="password" class="form-label required">Password</label>
+                        <input type="password" name="password" class="form-control" id="password" required
                             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[%||!||*]).{8,42}">
-                        <div id="emailHelp" class="form-text">e.g. Garfield2022!</div>
+                        <div class="form-text">e.g. Garfield2022!</div>
                     </div>
                     <button type="submit" class="btn btn-outline-dark col-12 col-md-3">Sign Up</button>
                 </form>
