@@ -1,0 +1,24 @@
+header {
+
+    background-color: var(--main-dark-color);
+    font-family: 'Source Code Pro', sans-serif;
+
+
+}
+
+
+.logo {
+    color: white;
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 600;
+    font-size: 2rem;
+
+}
+
+.my-color {
+    color: var(--main-red-color);
+}
+
+.form-text {
+    color: var(--main-grey-color);
+}
