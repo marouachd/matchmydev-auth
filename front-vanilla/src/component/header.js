@@ -2,7 +2,7 @@ import { messages } from "../messages.js";
 
 function renderHeader() {
     const content = `
-    <div class="fixed-top">
+    <div class="fixed-top bg-dark">
         <nav class="navbar navbar-expand-md navbar-dark container-xl">
             <a class="navbar-brand" href="#">${messages.brand}</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
