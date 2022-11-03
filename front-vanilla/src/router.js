@@ -1,14 +1,14 @@
-import { renderSignUp } from "./component/signUp";
-import { renderError401 } from "./Component/error401";
+import { renderSignUp } from "./component/signUp.js";
+import { renderError401 } from "./component/error401.js";
 
 window.addEventListener('hashchange', (event) => route(event));
 
-function route () {
+function route() {
     const hash = window.location.hash;
-    if (hash == ""){
+    if (hash == "" || hash == "index.html") {
         renderSignUp();
     }
-    else if (hash == "unauthaurized"){
+    else if (hash == "unauthaurized") {
         renderError401();
     }
 }

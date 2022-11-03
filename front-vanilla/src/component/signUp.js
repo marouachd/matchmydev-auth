@@ -1,6 +1,6 @@
-import {messages} from "../resources/messages.json";
+import { messages } from "../messages.js";
 
-function renderSignUp(){
+function renderSignUp() {
     const signUpContent = `
         <div class="container-xl my-5 pt-5">
             <h1>${messages.signUp.h1}</h1>
@@ -35,4 +35,4 @@ function renderSignUp(){
     main.innerHTML = signUpContent;
 }
 
-export {renderSignUp};
+export { renderSignUp };
