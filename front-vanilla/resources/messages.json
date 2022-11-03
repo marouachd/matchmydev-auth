@@ -1,0 +1,13 @@
+{
+    "signUp": {
+        "h1": "Sign up",
+        "formInternalIdentifer": "Internal identifier",
+        "helpInternalIdentifer": "e.g. FMARSHA010406",
+        "formInternalEmail": "Internal email",
+        "helpInternalEmail": "e.g. first.last@domain.com",
+        "formPassword": "Password",
+        "helpPassword": "e.g. Garfield2022!",
+        "submit": "Sign up"
+    },
+    "brand": "<span class=\"logo\">match<span class=\"my-color\">my</span>dev</span>"
+}
