@@ -1,8 +1,8 @@
 {
     "signUp": {
         "h1": "Sign up",
-        "formInternalIdentifer": "Internal identifier",
-        "helpInternalIdentifer": "e.g. FMARSHA010406",
+        "formInternalIdentifier": "Internal identifier",
+        "helpInternalIdentifier": "e.g. FMARSHA010406",
         "formInternalEmail": "Internal email",
         "helpInternalEmail": "e.g. first.last@domain.com",
         "formPassword": "Password",
