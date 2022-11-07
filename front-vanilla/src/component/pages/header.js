@@ -1,4 +1,4 @@
-import { messages } from "../messages.js";
+import { messages } from "../../messages.js";
 
 function renderHeader() {
     const content = `

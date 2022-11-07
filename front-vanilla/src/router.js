@@ -1,9 +1,9 @@
-import { renderSignUp } from "./component/signUp.js";
-import { renderError401 } from "./component/error401.js";
-import { renderError403 } from "./component/error403.js";
-import { renderError404 } from "./component/error404.js";
-import { renderError500 } from "./component/error500.js";
-import { renderHome } from "./component/home.js";
+import { renderSignUp } from "./component/patterns/signUp.js";
+import { renderError401 } from "./component/pages/error401.js";
+import { renderError403 } from "./component/pages/error403.js";
+import { renderError404 } from "./component/pages/error404.js";
+import { renderError500 } from "./component/pages/error500.js";
+import { renderHome } from "./component/pages/home.js";
 
 window.addEventListener('hashchange', (event) => route(event));
 
