@@ -1,6 +1,6 @@
 import { messages } from "../../messages.js";
 
-function renderSignIn(path) {
+function renderSignInForm(path) {
 
     const content = `
         <form>
@@ -23,4 +23,4 @@ function renderSignIn(path) {
 
 }
 
-export { renderSignIn };
+export { renderSignInForm };

@@ -1,6 +1,6 @@
-import { renderSignUp } from "../patterns/signUp.js";
-import { renderSignIn } from "../patterns/signIn.js";
-import { messages } from "../../messages.js" ;
+import { renderSignUpForm } from "../patterns/signUpForm.js";
+import { renderSignInForm } from "../patterns/signInForm.js";
+import { messages } from "../../messages.js";
 
 function renderHome() {
     const homeContent = `
@@ -20,8 +20,8 @@ function renderHome() {
     `
     const main = document.getElementById("main");
     main.innerHTML = homeContent;
-    renderSignIn("section1");
-    renderSignUp("section2");
+    renderSignInForm("section1");
+    renderSignUpForm("section2");
 }
 
 export { renderHome };

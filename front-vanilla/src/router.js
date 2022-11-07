@@ -1,4 +1,3 @@
-import { renderSignUp } from "./component/patterns/signUp.js";
 import { renderError401 } from "./component/pages/error401.js";
 import { renderError403 } from "./component/pages/error403.js";
 import { renderError404 } from "./component/pages/error404.js";
