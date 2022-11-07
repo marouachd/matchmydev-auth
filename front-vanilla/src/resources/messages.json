@@ -9,5 +9,11 @@
         "helpPassword": "e.g. Garfield2022!",
         "submit": "Sign up"
     },
+    "signIn": {
+        "h1": "Sign in",
+        "formIdentifier": "Internal identifier or email",
+        "formPassword": "Password",
+        "submit": "Sign in"
+    },
     "brand": "<span class=\"logo\">match<span class=\"my-color\">my</span>dev</span>"
 }
