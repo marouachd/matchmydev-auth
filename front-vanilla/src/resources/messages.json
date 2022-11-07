@@ -15,5 +15,8 @@
         "formPassword": "Password",
         "submit": "Sign in"
     },
+    "home": {
+        "h1": "Login or register"
+    },
     "brand": "<span class=\"logo\">match<span class=\"my-color\">my</span>dev</span>"
 }

@@ -2,10 +2,10 @@ import { renderSignUp } from "../patterns/signUp.js";
 import { renderSignIn } from "../patterns/signIn.js";
 import { messages } from "../../messages.js" ;
 
-function renderHome () {
+function renderHome() {
     const homeContent = `
     <div class="container-xl my-5 pt-5">
-        <h1>Login or register</h1>
+        <h1>${messages.home.h1}</h1>
         <div class="row">
             <div class="col-md my-5 mx-2">
                 <h2>${messages.signIn.h1}</h2>
@@ -24,4 +24,4 @@ function renderHome () {
     renderSignUp("section2");
 }
 
-export {renderHome};
+export { renderHome };
