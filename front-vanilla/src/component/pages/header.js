@@ -10,9 +10,8 @@ function renderHeader() {
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <p>test1</p>
-                    <p>test2</p>
-                    <p>test3</p>
+                    <a class="nav-link" href="#/home">Home</a>
+                    <a class="nav-link" href="#/sign-in">Sign in</a>
                 </div>
             </div>
         </nav>

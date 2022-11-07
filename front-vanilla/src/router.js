@@ -1,19 +1,20 @@
-import { renderSignUp } from "./component/patterns/signUp.js";
 import { renderError401 } from "./component/pages/error401.js";
 import { renderError403 } from "./component/pages/error403.js";
 import { renderError404 } from "./component/pages/error404.js";
 import { renderError500 } from "./component/pages/error500.js";
 import { renderHome } from "./component/pages/home.js";
+import { renderSignIn } from "./component/pages/signIn.js";
 
 window.addEventListener('hashchange', (event) => route(event));
 
 
 function route() {
     const hash = window.location.hash;
-    if (hash == "" || hash == "index.html") {
+    if (hash == "" || hash == "index.html" || hash == "#/home") {
         renderHome();
-    }
-    else if (hash == "#/unauthaurized") {
+    } else if (hash == "#/sign-in") {
+        renderSignIn();
+    } else if (hash == "#/unauthaurized") {
         renderError401();
     } else if (hash == "#/forbiden") {
         renderError403();
