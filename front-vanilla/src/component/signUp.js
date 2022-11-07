@@ -1,6 +1,6 @@
 import { messages } from "../messages.js";
 
-function renderSignUp() {
+function renderSignUp(path) {
     const signUpContent = `
         <div class="container-xl my-5 pt-5">
             <h1>${messages.signUp.h1}</h1>
@@ -31,7 +31,7 @@ function renderSignUp() {
                 </div>
             </div>
     `
-    const main = document.getElementById("main");
+    const main = document.getElementById(`${path}`);
     main.innerHTML = signUpContent;
 }
 

@@ -1,6 +1,6 @@
 import { messages } from "../messages.js";
 
-function renderSignIn() {
+function renderSignIn(path) {
 
     const content = `
 <div class="container-xl my-5 pt-5">
@@ -25,7 +25,7 @@ function renderSignIn() {
 </div>
 `
 
-    const main = document.getElementById("main");
+    const main = document.getElementById(`${path}`);
     main.innerHTML = content;
 
 }
