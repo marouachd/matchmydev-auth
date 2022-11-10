@@ -1,7 +1,25 @@
 import Messages from "../../Messages.js";
 
-function renderSignUpForm(path) {
-    const signUpContent = `
+export default class FormsContent {
+
+    static signInForm() {
+        return `
+    <form>
+        <div class="mb-3">
+            <label for="identifier" class="form-label required">${Messages.messages.signIn.formIdentifier}</label>
+            <input type="email" name ="identifier" class="form-control" id="identifier">
+        </div>
+        <div class="mb-3">
+            <label for="passwordSignIn" class="form-label required">${Messages.messages.signIn.formPassword}</label>
+            <input type="password" name="passwordSignIn" class="form-control" id="passwordSignIn">
+        </div>
+        <button type="submit" class="btn btn-outline-dark col-12 col-md-3">${Messages.messages.signIn.submit}</button>
+    </form>
+
+    `;
+    }
+    static signUpForm() {
+        return `
         <form>
             <div class="mb-3">
                 <label for="internalIdentifier" class="form-label required ">${Messages.messages.signUp.formInternalIdentifier}</label>
@@ -23,9 +41,6 @@ function renderSignUpForm(path) {
             </div>
             <button type="submit" class="btn btn-outline-dark col-12 col-md-3">${Messages.messages.signUp.submit}</button>
         </form>
-    `
-    const main = document.getElementById(`${path}`);
-    main.innerHTML = signUpContent;
+    `;
+    }
 }
-
-export { renderSignUpForm };

@@ -6,14 +6,14 @@ import HeaderComponent from "./component/pages/HeaderComponent.js";
 import HomeComponent from "./component/pages/HomeComponent.js";
 import SignInComponent from "./component/pages/SignInComponent.js";
 
-export default class Router{
-    static init(){
+export default class Router {
+    static init() {
         window.addEventListener('hashchange', (event) => Router.route(event));
         const header = new HeaderComponent();
         header.render();
         Router.route();
     }
-    static route(event){
+    static route(event) {
         let component = null;
         const hash = window.location.hash;
         if (hash == "" || hash == "index.html" || hash == "#/home") {
