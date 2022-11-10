@@ -1,28 +1,36 @@
-import { renderError401 } from "./component/pages/error401.js";
-import { renderError403 } from "./component/pages/error403.js";
-import { renderError404 } from "./component/pages/error404.js";
-import { renderError500 } from "./component/pages/error500.js";
-import { renderHome } from "./component/pages/home.js";
-import { renderSignIn } from "./component/pages/signIn.js";
+import Error401Component from "./component/pages/Error401Component.js";
+import Error403Component from "./component/pages/Error403Component.js";
+import Error404Component from "./component/pages/Error404Component.js";
+import Error500Component from "./component/pages/Error500Component.js";
+import HeaderComponent from "./component/pages/HeaderComponent.js";
+import HomeComponent from "./component/pages/HomeComponent.js";
+import SignInComponent from "./component/pages/SignInComponent.js";
 
-window.addEventListener('hashchange', (event) => route(event));
-
-
-function route() {
-    const hash = window.location.hash;
-    if (hash == "" || hash == "index.html" || hash == "#/home") {
-        renderHome();
-    } else if (hash == "#/sign-in") {
-        renderSignIn();
-    } else if (hash == "#/unauthaurized") {
-        renderError401();
-    } else if (hash == "#/forbiden") {
-        renderError403();
-    } else if (hash == "#/serverdown") {
-        renderError500();
-    } else {
-        renderError404();
+export default class Router{
+    static init(){
+        window.addEventListener('hashchange', (event) => Router.route(event));
+        const header = new HeaderComponent();
+        header.render();
+        Router.route();
+    }
+    static route(event){
+        let component = null;
+        const hash = window.location.hash;
+        if (hash == "" || hash == "index.html" || hash == "#/home") {
+            component = new HomeComponent();
+        } else if (hash == "#/sign-in") {
+            component = new SignInComponent();
+        } else if (hash == "#/unauthaurized") {
+            component = new Error401Component();
+        } else if (hash == "#/forbidden") {
+            component = new Error403Component();
+        } else if (hash == "#/serverdown") {
+            component = new Error500Component();
+        } else {
+            component = new Error404Component();
+        }
+        component.render();
     }
 }
 
-export { route };
+
