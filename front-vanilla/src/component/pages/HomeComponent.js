@@ -1,10 +1,20 @@
-import BaseComponent from "../BaseComponent.js";
 import FormsContent from "../patterns/FormsContent.js";
 
-export default class HomeComponent extends BaseComponent {
+export default class HomeComponent extends BaseFormComponent {
 
     constructor() {
-        super("#main");
+        super("#main", {
+            url: null,
+            method: "POST"
+        });
+    }
+
+    dataModel() {
+        return {
+            internalIdentifier: "FMARSHALL010670",
+            internalEmail: "first.last@domain.com",
+            password: "Garfield2022!"
+        };
     }
 
     template() {

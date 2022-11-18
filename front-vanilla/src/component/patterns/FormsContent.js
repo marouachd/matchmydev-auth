@@ -4,7 +4,7 @@ export default class FormsContent {
 
     static signInForm() {
         return `
-    <form>
+    <form id="signIn">
         <div class="mb-3">
             <label for="identifier" class="form-label required">${Messages.messages.signIn.formIdentifier}</label>
             <input type="email" name ="identifier" class="form-control" id="identifier">
@@ -20,7 +20,7 @@ export default class FormsContent {
     }
     static signUpForm() {
         return `
-        <form>
+        <form id="signUp">
             <div class="mb-3">
                 <label for="internalIdentifier" class="form-label required ">${Messages.messages.signUp.formInternalIdentifier}</label>
                 <input class="form-control" name="internalIdentifier" id="internalIdentifier" required
