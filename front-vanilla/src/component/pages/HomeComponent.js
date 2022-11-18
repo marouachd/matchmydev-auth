@@ -1,17 +1,18 @@
+import BaseFormComponent from "../BaseFormComponent.js";
 import FormsContent from "../patterns/FormsContent.js";
 
 export default class HomeComponent extends BaseFormComponent {
 
     constructor() {
         super("#main", {
-            url: null,
+            url: "http:localhost:8080/useraccount",
             method: "POST"
         });
     }
 
     dataModel() {
         return {
-            internalIdentifier: "FMARSHALL010670",
+            internalIdentifier: "FMARSHA010670",
             internalEmail: "first.last@domain.com",
             password: "Garfield2022!"
         };
