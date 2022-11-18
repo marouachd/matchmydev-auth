@@ -25,5 +25,6 @@ public class AuthController {
 	userAccount.setInternalEmail(inputs.getInternalEmail());
 	userAccount.setPassword(inputs.getPassword());
 	Database.saveAccount(userAccount);
+	System.out.println(userAccount);
     }
 }

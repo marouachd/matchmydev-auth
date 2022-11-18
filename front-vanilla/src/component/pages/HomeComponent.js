@@ -5,7 +5,7 @@ export default class HomeComponent extends BaseFormComponent {
 
     constructor() {
         super("#main", {
-            url: "http:localhost:8080/useraccount",
+            url: "http://localhost:8080/useraccount",
             method: "POST"
         });
     }

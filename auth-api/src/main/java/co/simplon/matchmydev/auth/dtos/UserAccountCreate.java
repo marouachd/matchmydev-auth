@@ -1,9 +1,12 @@
 package co.simplon.matchmydev.auth.dtos;
 
+import org.springframework.security.crypto.bcrypt.BCrypt;
+
 public class UserAccountCreate {
     private String internalIdentifier;
     private String internalEmail;
     private String password;
+    private final int TOURS = 10;
 
     public UserAccountCreate() {
 	super();
@@ -26,7 +29,8 @@ public class UserAccountCreate {
     }
 
     public String getPassword() {
-	return password;
+	String pw_hash = BCrypt.hashpw(password, BCrypt.gensalt(TOURS));
+	return pw_hash;
     }
 
     public void setPassword(String password) {

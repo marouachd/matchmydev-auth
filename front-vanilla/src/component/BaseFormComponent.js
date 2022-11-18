@@ -19,6 +19,7 @@ export default class BaseFormComponent extends BaseComponent {
         form.addEventListener("submit", (event) => {
             event.preventDefault();
             HttpClient.send(this.props.url, this.props.method, data);
+            window.location.hash = "#/sign-in";
         });
 
     }
