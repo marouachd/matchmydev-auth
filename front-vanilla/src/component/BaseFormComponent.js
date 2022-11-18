@@ -1,3 +1,4 @@
+import HttpClient from "../HttpClient.js";
 import BaseComponent from "./BaseComponent.js";
 
 export default class BaseFormComponent extends BaseComponent {
@@ -10,11 +11,15 @@ export default class BaseFormComponent extends BaseComponent {
     }
 
     render() {
-        super();
+        super.render();
         const data = this.dataModel();
         const properties = Object.keys(data);
-        const form = document.getElementById("signUp");
+        const form = this.target.querySelector("#signUp");
         BaseFormComponent.bind(properties, form, data);
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+            HttpClient.send(this.props.url, this.props.method, data);
+        });
 
     }
 
