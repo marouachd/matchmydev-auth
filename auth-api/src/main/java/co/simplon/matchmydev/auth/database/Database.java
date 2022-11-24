@@ -1,5 +1,6 @@
 package co.simplon.matchmydev.auth.database;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -14,5 +15,9 @@ public class Database {
 	accountId++;
 	userAccount.setId(accountId);
 	USERACCOUNTS.put(accountId, userAccount);
+    }
+
+    public static Collection<UserAccount> findAll() {
+	return USERACCOUNTS.values();
     }
 }
