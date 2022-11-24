@@ -9,7 +9,8 @@ export default class AccountsListComponent extends BaseIterableComponent {
         }
         );
     }
-    template(element) {
+
+    template() {
         return `
         <h1>Accounts list</h1>
         <div class="table-responsive my-5">
@@ -23,20 +24,25 @@ export default class AccountsListComponent extends BaseIterableComponent {
                         <th scope="col">Status</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>${element.internalIdentifier}</td>
-                        <td> ${element.internalEmail}</td>
-                        <td> ${element.password}</td>
-                        <td> ${element.createdAt} </td>
-                        <td class="text-center">
-                        <a href=""><i class="bi bi-circle-fill text-${element.active ? "success" : "danger"}"</i></a>
-                        </td>
-                    </tr>
+                <tbody id = "accountsList">
+             
                 </tbody>
             </table>
         </div>
         
         `
+    }
+
+    elementsTemplate(element) {
+        return `   
+            <tr>
+        <td>${element.internalIdentifier}</td>
+        <td> ${element.internalEmail}</td>
+        <td> ${element.password}</td>
+        <td> ${element.createdAt} </td>
+        <td class="text-center">
+        <a href=""><i class="bi bi-circle-fill text-${element.active ? "success" : "danger"}"></i></a>
+        </td>
+    </tr>`;
     }
 };
