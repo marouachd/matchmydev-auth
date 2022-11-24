@@ -6,7 +6,7 @@ public class UserAccountCreate {
     private String internalIdentifier;
     private String internalEmail;
     private String password;
-    private final int TOURS = 10;
+    private final int TOURS = 12;
 
     public UserAccountCreate() {
 	super();
