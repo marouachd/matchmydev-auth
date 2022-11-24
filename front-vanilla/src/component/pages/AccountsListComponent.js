@@ -33,13 +33,13 @@ export default class AccountsListComponent extends BaseIterableComponent {
     }
     elementsTemplate(element) {
         return `
-            <tr>
+            <tr>            
                 <td class="text-truncate">${element.internalIdentifier}</td>
                 <td class="text-truncate"> ${element.internalEmail}</td>
                 <td class="text-truncate" title="${element.password}"> ${element.password}</td>
-                <td class="text-truncate"> ${element.createdAt} </td>
+                <td class="text-truncate"> ${this.dtfFormat(element.createdAt)} </td>
                 <td class="text-center">
-                <a href=""><i class="bi bi-circle-fill text-${element.active ? "success" : "danger"}"></i></a>
+                <a href="#/accounts-list"><i class="bi bi-circle-fill text-${element.active ? "success" : "danger"}"></i></a>
                 </td>
             </tr>
         `
