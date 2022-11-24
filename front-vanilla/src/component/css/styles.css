@@ -15,3 +15,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@;0,300;0,400;0,600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+/* Nouvelle feuille css à créer*/
+.head-table {
+    background-color: var(--second-grey-color);
+}
