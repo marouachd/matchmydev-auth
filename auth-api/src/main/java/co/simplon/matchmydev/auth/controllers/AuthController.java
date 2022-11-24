@@ -35,7 +35,13 @@ public class AuthController {
 	String hash = BCrypt.hashpw(inputs.getPassword(), BCrypt.gensalt(10));
 	userAccount.setPassword(hash);
 	Database.saveAccount(userAccount);
-	System.out.println(userAccount);
+
+	if (Database.findAll().size() < 5) {
+	    for (int i = 0; i < 5; i++) {
+		Database.addRandomAccount();
+	    }
+	}
+
     }
 
     @GetMapping
