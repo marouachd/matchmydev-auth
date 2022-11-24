@@ -1,11 +1,15 @@
 package co.simplon.matchmydev.auth.dtos;
 
-public class UserAccountCreate {
+import java.time.LocalDateTime;
+
+public class UserAccountView {
     private String internalIdentifier;
     private String internalEmail;
     private String password;
+    private boolean active;
+    private LocalDateTime createdAt;
 
-    public UserAccountCreate() {
+    public UserAccountView() {
 	super();
     }
 
@@ -33,11 +37,27 @@ public class UserAccountCreate {
 	this.password = password;
     }
 
+    public boolean isActive() {
+	return active;
+    }
+
+    public void setActive(boolean active) {
+	this.active = active;
+    }
+
+    public LocalDateTime getCreatedAt() {
+	return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+	this.createdAt = createdAt;
+    }
+
     @Override
     public String toString() {
-	return "AuthController [internalIdentifier=" + internalIdentifier
+	return "UserAccountView [internalIdentifier=" + internalIdentifier
 		+ ", internalEmail=" + internalEmail + ", password=" + password
-		+ "]";
+		+ ", active=" + active + ", createdAt=" + createdAt + "]";
     }
 
 }

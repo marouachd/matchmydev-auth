@@ -1,9 +1,13 @@
 package co.simplon.matchmydev.auth.entities;
 
+import java.time.LocalDateTime;
+
 public class UserAccount {
     private String internalIdentifier;
     private String internalEmail;
     private String password;
+    private boolean active;
+    private LocalDateTime createdAt;
     private Long id;
 
     public UserAccount() {
@@ -42,11 +46,28 @@ public class UserAccount {
 	this.id = id;
     }
 
+    public boolean isActive() {
+	return active;
+    }
+
+    public void setActive(boolean active) {
+	this.active = active;
+    }
+
+    public LocalDateTime getCreatedAt() {
+	return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+	this.createdAt = createdAt;
+    }
+
     @Override
     public String toString() {
 	return "UserAccount [internalIdentifier=" + internalIdentifier
 		+ ", internalEmail=" + internalEmail + ", password=" + password
-		+ ", id=" + id + "]";
+		+ ", active=" + active + ", createdAt=" + createdAt + ", id="
+		+ id + "]";
     }
 
 }
