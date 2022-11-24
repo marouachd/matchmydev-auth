@@ -19,6 +19,10 @@
     color: var(--main-dark-color);
 }
 
+.btn-wrap {
+    min-width: 120px;
+}
+
 main {
     font-family: 'Source Sans Pro', sans-serif;
 

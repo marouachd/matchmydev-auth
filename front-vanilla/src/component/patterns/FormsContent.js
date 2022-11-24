@@ -13,7 +13,7 @@ export default class FormsContent {
             <label for="passwordSignIn" class="form-label required">${Messages.messages.signIn.formPassword}</label>
             <input type="password" name="passwordSignIn" class="form-control" id="passwordSignIn">
         </div>
-        <button type="submit" class="btn btn-outline-dark col-12 col-md-3">${Messages.messages.signIn.submit}</button>
+        <button type="submit" class="btn btn-outline-dark col-12 col-md-3 btn-wrap">${Messages.messages.signIn.submit}</button>
     </form>
 
     `;

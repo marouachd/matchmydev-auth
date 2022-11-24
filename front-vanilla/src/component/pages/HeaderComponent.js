@@ -17,6 +17,7 @@ export default class HeaderComponent extends BaseComponent {
                     <div class="navbar-nav">
                         <a class="nav-link" href="#/home">Home</a>
                         <a class="nav-link" href="#/sign-in">Sign in</a>
+                        <a class="nav-link" href="#/accounts-list">Accounts list</a>
                     </div>
                 </div>
             </nav>

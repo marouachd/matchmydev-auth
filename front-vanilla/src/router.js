@@ -5,6 +5,7 @@ import Error500Component from "./component/pages/Error500Component.js";
 import HeaderComponent from "./component/pages/HeaderComponent.js";
 import HomeComponent from "./component/pages/HomeComponent.js";
 import SignInComponent from "./component/pages/SignInComponent.js";
+import AccountsListComponent from "./component/pages/AccountsListComponent.js";
 
 export default class Router {
     static init() {
@@ -20,6 +21,8 @@ export default class Router {
             component = new HomeComponent();
         } else if (hash == "#/sign-in") {
             component = new SignInComponent();
+        } else if (hash == "#/accounts-list") {
+            component = new AccountsListComponent();
         } else if (hash == "#/unauthaurized") {
             component = new Error401Component();
         } else if (hash == "#/forbidden") {
