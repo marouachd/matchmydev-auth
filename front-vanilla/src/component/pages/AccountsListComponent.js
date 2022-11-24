@@ -14,7 +14,7 @@ export default class AccountsListComponent extends BaseIterableComponent {
         <div class="container-xl my-5 pt-5">
         <h1>Accounts list</h1>
         <div class="table-responsive my-5">
-            <table id="accountslist" class="table table-bordered ">
+            <table id="accountslist" class="table table-bordered table-striped">
                 <thead class="head-table">
                     <tr>
                         <th scope="col">Internal identifier</th>
@@ -34,10 +34,10 @@ export default class AccountsListComponent extends BaseIterableComponent {
     elementsTemplate(element) {
         return `
             <tr>
-                <td>${element.internalIdentifier}</td>
-                <td> ${element.internalEmail}</td>
-                <td> ${element.password}</td>
-                <td> ${element.createdAt} </td>
+                <td class="text-truncate">${element.internalIdentifier}</td>
+                <td class="text-truncate"> ${element.internalEmail}</td>
+                <td class="text-truncate" title="${element.password}"> ${element.password}</td>
+                <td class="text-truncate"> ${element.createdAt} </td>
                 <td class="text-center">
                 <a href=""><i class="bi bi-circle-fill text-${element.active ? "success" : "danger"}"></i></a>
                 </td>

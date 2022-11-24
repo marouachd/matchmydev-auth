@@ -15,3 +15,7 @@
 .head-table {
     background-color: var(--second-grey-color);
 }
+
+td {
+    max-width: 200px;
+}
