@@ -5,6 +5,8 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.security.crypto.bcrypt.BCrypt;
+
 import co.simplon.matchmydev.auth.entities.UserAccount;
 
 public class Database {
@@ -26,7 +28,9 @@ public class Database {
 	UserAccount randomAccount = new UserAccount();
 	randomAccount.setInternalIdentifier("Jean");
 	randomAccount.setInternalEmail("test@test.com");
-	randomAccount.setPassword("non-crypted password");
+	String hashPw = BCrypt.hashpw("toto",
+		BCrypt.gensalt(10));
+	randomAccount.setPassword(hashPw);
 	randomAccount.setActive(false);
 	randomAccount.setCreatedAt(LocalDateTime.now());
 
