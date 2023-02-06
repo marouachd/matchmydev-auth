@@ -14,7 +14,7 @@ export default class AccountsListComponent extends BaseIterableComponent {
         <div class="container-xl my-5 pt-5">
         <h1>Accounts list</h1>
         <div class="table-responsive my-5">
-            <table id="accountslist" class="table table-bordered table-striped">
+            <table id="accountslist" class="table table-bordered">
                 <thead class="head-table">
                     <tr>
                         <th scope="col">Internal identifier</th>

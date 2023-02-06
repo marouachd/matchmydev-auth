@@ -4,6 +4,8 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import javax.validation.Valid;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -18,47 +20,36 @@ import co.simplon.matchmydev.auth.database.Database;
 import co.simplon.matchmydev.auth.dtos.UserAccountCreate;
 import co.simplon.matchmydev.auth.dtos.UserAccountView;
 import co.simplon.matchmydev.auth.entities.UserAccount;
+import co.simplon.matchmydev.auth.services.UserAccountService;
 
 @RestController
 @RequestMapping("/useraccount")
 @CrossOrigin
 public class AuthController {
+	
+	private UserAccountService service;
+	
+	public AuthController (UserAccountService service) {
+		this.service = service;
+		
+	}
+	
 
     @PostMapping
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void create(@RequestBody UserAccountCreate inputs) {
-	UserAccount userAccount = new UserAccount();
-	userAccount.setInternalIdentifier(inputs.getInternalIdentifier());
-	userAccount.setInternalEmail(inputs.getInternalEmail());
-	userAccount.setCreatedAt(LocalDateTime.now());
-	userAccount.setActive(true);
-	String hash = BCrypt.hashpw(inputs.getPassword(), BCrypt.gensalt(10));
-	userAccount.setPassword(hash);
-	Database.saveAccount(userAccount);
+    public void create(@Valid @RequestBody UserAccountCreate inputs) {
 
-	if (Database.findAll().size() < 5) {
-	    for (int i = 0; i < 5; i++) {
-		Database.addRandomAccount();
-	    }
-	}
+    		service.create(inputs);
+     System.out.println("juliette est gentille :D");
 
     }
 
     @GetMapping
     public Collection<UserAccountView> getAll() {
-	Collection<UserAccountView> views = new ArrayList<>();
-	Collection<UserAccount> userAccounts = Database.findAll();
+    	System.out.println("juliette est gentille :D");
+		return service.getAll();
+		 
 
-	for (UserAccount userAccount : userAccounts) {
-	    UserAccountView view = new UserAccountView();
-	    view.setInternalIdentifier(userAccount.getInternalIdentifier());
-	    view.setInternalEmail(userAccount.getInternalEmail());
-	    view.setPassword(userAccount.getPassword());
-	    view.setActive(userAccount.isActive());
-	    view.setCreatedAt(userAccount.getCreatedAt());
-	    views.add(view);
-	}
-
-	return views;
     }
+    
 }

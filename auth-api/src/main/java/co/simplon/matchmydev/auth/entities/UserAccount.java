@@ -2,12 +2,33 @@ package co.simplon.matchmydev.auth.entities;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="user_accounts")
 public class UserAccount {
+	@Column(name= "internal_identifier")
     private String internalIdentifier;
+	
+	@Column(name="internal_email")
     private String internalEmail;
+	
+	@Column(name="password")
     private String password;
+	
+	@Column(name="active")
     private boolean active;
+	
+	@Column(name="created_at")
     private LocalDateTime createdAt;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     public UserAccount() {
