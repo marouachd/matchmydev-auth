@@ -1,0 +1,26 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@;0,300;0,400;0,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap'); */
+
+:root {
+    --main-dark-color: #000000;
+    --main-red-color: #FF0000;
+    --main-grey-color: #A9A9A9;
+
+    --second-dark-color: #34282C;
+    --second-red-color: #CD5C5C;
+    --second-grey-color: #DCDCDC;
+}
+
+.head-table {
+    background-color: var(--second-grey-color);
+
+}
+
+/* Nouvelle feuille css à créer*/
+.head-table {
+    background-color: var(--second-grey-color);
+}
+
+td {
+    max-width: 200px;
+}
