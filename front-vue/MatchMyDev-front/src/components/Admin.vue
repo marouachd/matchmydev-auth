@@ -1,7 +1,7 @@
 <script setup>
-import AccountList from './commons/AccountList.vue';
+// import AccountList from './commons/AccountList.vue';
 </script>
 
 <template>
-    <AccountList></AccountList>
+    <!-- <AccountList></AccountList> -->
 </template>
