@@ -25,9 +25,9 @@ export default {
     validations() {
         return {
             inputs: {
-                internalIdentifier: { required, identifierValidator },
-                internalEmail: { required, emailValidator },
-                password: { required, passwordValidator }
+                internalIdentifier: { required, identifierValidator: helpers.withMessage("Should respect SG pattern", identifierValidator) },
+                internalEmail: { required, emailValidator: helpers.withMessage("Should be a valid email", emailValidator) },
+                password: { required, passwordValidator: helpers.withMessage("length [8, 42] + at least 1 upper and lower letter, at least 1 digit, at least 1 of %*!", passwordValidator) }
             }
         }
     },
@@ -58,7 +58,7 @@ export default {
             </span>
         </div>
         <div class="mb-3">
-            <label for="internalEmail" class="form-label required">Internal identifier</label>
+            <label for="internalEmail" class="form-label required">Internal email</label>
             <input type="email" name="internalEmail" class="form-control" id="internalEmail"
                 v-model="inputs.internalEmail" :class="{ 'is-invalid': validator.inputs.internalEmail.$error }">
             <div class="form-text">e.g. first.last@domain.com</div>
@@ -78,15 +78,14 @@ export default {
         <button type="submit" class="btn btn-outline-dark col-12 col-md-3">Sign up</button>
     </form>
 </template>
-
-<style>
+<style scoped>
 .btn-outline-dark {
     background-color: var(--main-grey-color);
     border-color: var(--main-grey-color);
     float: right;
 
     color: var(--main-dark-color);
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.05rem;
 }
 
 .btn-outline-dark:hover {
@@ -105,10 +104,7 @@ export default {
     min-width: 120px;
 }
 
-main {
-    font-family: 'Source Sans Pro', sans-serif;
 
-}
 
 .required::after {
     color: var(--main-red-color);

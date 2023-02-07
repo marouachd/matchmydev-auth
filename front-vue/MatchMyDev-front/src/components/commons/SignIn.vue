@@ -1,24 +1,7 @@
 <script>
 import axios from 'axios';
-import { useVuelidate } from '@vuelidate/core'
-import { required, maxLength, maxValue, minValue, url } from '@vuelidate/validators'
 
 export default {
-    setup() {
-        const validator = useVuelidate();
-        return {
-            validator
-        }
-    },
-    data() {
-        return {
-            inputs: {
-                internalIdentifier: "FMARSHA010670",
-                internalEmail: "first.last@domain.com",
-                password: "Garfield2022!"
-            }
-        }
-    },
     methods: {
         submitForm() {
             axios.get('http://localhost:8080/useraccount').then(function (response) {
@@ -36,13 +19,58 @@ export default {
 <template>
     <form id="signIn" @submit.prevent="submitForm">
         <div class="mb-3">
-            <label for="identifier" class="form-label required">Internal identifier</label>
+            <label for="identifier" class="form-label required">Internal identifier or email</label>
             <input type="email" name="identifier" class="form-control" id="identifier">
         </div>
         <div class="mb-3">
-            <label for="passwordSignIn" class="form-label required">Internal email</label>
+            <label for="passwordSignIn" class="form-label required">Password</label>
             <input type="password" name="passwordSignIn" class="form-control" id="passwordSignIn">
         </div>
         <button type="submit" class="btn btn-outline-dark col-12 col-md-3 btn-wrap">Sign in</button>
     </form>
 </template>
+<style scoped>
+.btn-outline-dark {
+    background-color: var(--main-grey-color);
+    border-color: var(--main-grey-color);
+    float: right;
+
+    color: var(--main-dark-color);
+    letter-spacing: 0.1rem;
+}
+
+.btn-outline-dark:hover {
+    background-color: var(--second-grey-color);
+    box-shadow: 0px 0px 5px 4px var(--second-grey-color);
+    color: var(--main-dark-color);
+}
+
+.btn-outline-dark:focus {
+    background-color: var(--second-grey-color);
+    box-shadow: 0px 0px 5px 4px var(--second-grey-color) !important;
+    color: var(--main-dark-color);
+}
+
+.btn-wrap {
+    min-width: 120px;
+}
+
+
+
+.required::after {
+    color: var(--main-red-color);
+    font-weight: bold;
+    content: " *";
+}
+
+.form-control:focus {
+    border: none;
+    box-shadow: 0px 0px 5px 4px var(--second-grey-color);
+}
+
+
+
+.form-label {
+    font-weight: 600;
+}
+</style>
