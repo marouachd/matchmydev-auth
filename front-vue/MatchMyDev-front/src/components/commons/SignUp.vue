@@ -36,7 +36,8 @@ export default {
             const valid = await this.validator.$validate();
             if (valid) {
                 const response = await this.$axios.post('useraccount', this.inputs);
-                if (response) {
+                console.log(response.status);
+                if (response.status == 204) {
                     document.location.href = "/sign-in";
                 }
             }

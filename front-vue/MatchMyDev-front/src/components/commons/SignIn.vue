@@ -3,14 +3,11 @@ import axios from 'axios';
 
 export default {
     methods: {
-        submitForm() {
-            axios.get('http://localhost:8080/useraccount').then(function (response) {
-                // const header = response.headers;
-                // return await response.json();
-                console.log("YEAH");
-            }).catch(function (error) {
-                console.log(error);
-            });
+        async submitForm() {
+            const test = await this.$axios.get('useraccount');
+            if (test) {
+                console.log("yeah");
+            }
         }
     }
 }
