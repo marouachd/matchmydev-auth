@@ -34,7 +34,8 @@
     color: var(--main-red-color);
 }
 
-.form-text {
-    color: var(--main-grey-color);
+header {
+    background-color: var(--main-dark-color);
+    font-family: 'Source Code Pro', sans-serif;
 }
 </style>
