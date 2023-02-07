@@ -21,16 +21,7 @@
         </div>
     </header>
 </template>
-<style>
-header {
-
-    background-color: var(--main-dark-color);
-    font-family: 'Source Code Pro', sans-serif;
-
-
-}
-
-
+<style scoped>
 .logo {
     color: white;
     font-family: 'Source Code Pro', monospace;
@@ -43,7 +34,8 @@ header {
     color: var(--main-red-color);
 }
 
-.form-text {
-    color: var(--main-grey-color);
+header {
+    background-color: var(--main-dark-color);
+    font-family: 'Source Code Pro', sans-serif;
 }
 </style>

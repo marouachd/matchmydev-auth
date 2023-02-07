@@ -25,9 +25,9 @@ export default {
     validations() {
         return {
             inputs: {
-                internalIdentifier: { required, identifierValidator },
-                internalEmail: { required, emailValidator },
-                password: { required, passwordValidator }
+                internalIdentifier: { required, identifierValidator: helpers.withMessage("Should respect SG pattern", identifierValidator) },
+                internalEmail: { required, emailValidator: helpers.withMessage("Should be a valid email", emailValidator) },
+                password: { required, passwordValidator: helpers.withMessage("length [8, 42] + at least 1 upper and lower letter, at least 1 digit, at least 1 of %*!", passwordValidator) }
             }
         }
     },
@@ -36,7 +36,8 @@ export default {
             const valid = await this.validator.$validate();
             if (valid) {
                 const response = await this.$axios.post('useraccount', this.inputs);
-                if (response) {
+                console.log(response.status);
+                if (response.status == 204) {
                     document.location.href = "/sign-in";
                 }
             }
@@ -48,47 +49,44 @@ export default {
 <template>
     <form id="signUp" @submit.prevent="submitForm">
         <div class="mb-3">
-            <label for="internalIdentifier"
-                class="form-label required ">${Messages.messages.signUp.formInternalIdentifier}</label>
+            <label for="internalIdentifier" class="form-label required ">Internal identifier</label>
             <input class="form-control" name="internalIdentifier" id="internalIdentifier"
                 v-model="inputs.internalIdentifier"
                 :class="{ 'is-invalid': validator.inputs.internalIdentifier.$error }">
-            <div class=" form-text">${Messages.messages.signUp.helpInternalIdentifier}
-            </div>
+            <div class=" form-text">e.g. FMARSHA010406</div>
             <span v-if="validator.inputs.internalIdentifier.$error">
                 {{ validator.inputs.internalIdentifier.$errors[0].$message }}
             </span>
         </div>
         <div class="mb-3">
-            <label for="internalEmail" class="form-label required">${Messages.messages.signUp.formInternalEmail}</label>
+            <label for="internalEmail" class="form-label required">Internal email</label>
             <input type="email" name="internalEmail" class="form-control" id="internalEmail"
                 v-model="inputs.internalEmail" :class="{ 'is-invalid': validator.inputs.internalEmail.$error }">
-            <div class="form-text">${Messages.messages.signUp.helpInternalEmail}</div>
+            <div class="form-text">e.g. first.last@domain.com</div>
             <span v-if="validator.inputs.internalEmail.$error">
                 {{ validator.inputs.internalEmail.$errors[0].$message }}
             </span>
         </div>
         <div class="mb-3">
-            <label for="password" class="form-label required">${Messages.messages.signUp.formPassword}</label>
+            <label for="password" class="form-label required">Password</label>
             <input type="password" name="password" class="form-control" id="password" v-model="inputs.password"
                 :class="{ 'is-invalid': validator.inputs.password.$error }">
-            <div class="form-text">${Messages.messages.signUp.helpPassword}</div>
+            <div class="form-text">e.g. Garfield2022!</div>
             <span v-if="validator.inputs.password.$error">
                 {{ validator.inputs.password.$errors[0].$message }}
             </span>
         </div>
-        <button type="submit" class="btn btn-outline-dark col-12 col-md-3">${Messages.messages.signUp.submit}</button>
+        <button type="submit" class="btn btn-outline-dark col-12 col-md-3">Sign up</button>
     </form>
 </template>
-
-<style>
+<style scoped>
 .btn-outline-dark {
     background-color: var(--main-grey-color);
     border-color: var(--main-grey-color);
     float: right;
 
     color: var(--main-dark-color);
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.05rem;
 }
 
 .btn-outline-dark:hover {
@@ -107,10 +105,7 @@ export default {
     min-width: 120px;
 }
 
-main {
-    font-family: 'Source Sans Pro', sans-serif;
 
-}
 
 .required::after {
     color: var(--main-red-color);

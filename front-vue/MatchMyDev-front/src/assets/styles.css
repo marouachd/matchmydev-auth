@@ -11,8 +11,8 @@
     --second-grey-color: #DCDCDC;
 }
 
-.head-table {
-    background-color: var(--second-grey-color);
+main {
+    font-family: 'Source Sans Pro', sans-serif;
 
 }
 

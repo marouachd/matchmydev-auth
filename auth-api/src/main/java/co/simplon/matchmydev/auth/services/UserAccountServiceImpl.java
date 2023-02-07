@@ -3,6 +3,7 @@ package co.simplon.matchmydev.auth.services;
 import java.time.LocalDateTime;
 import java.util.Collection;
 
+import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Service;
 
 import co.simplon.matchmydev.auth.dtos.UserAccountCreate;
@@ -25,7 +26,9 @@ public class UserAccountServiceImpl implements UserAccountService{
 		UserAccount userAccount = new UserAccount();
 		userAccount.setInternalIdentifier(inputs.getInternalIdentifier());
 		userAccount.setInternalEmail(inputs.getInternalEmail());
-		userAccount.setPassword(inputs.getPassword());
+		//userAccount.setPassword(inputs.getPassword());
+		String hash = BCrypt.hashpw(inputs.getPassword(), BCrypt.gensalt(10));
+	    userAccount.setPassword(hash);
 		LocalDateTime createdAt = LocalDateTime.now();
 		userAccount.setCreatedAt(createdAt);
 		userAccount.setActive(true);

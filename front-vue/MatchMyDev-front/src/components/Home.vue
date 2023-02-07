@@ -5,16 +5,16 @@ import SignUp from './commons/SignUp.vue';
 
 <template>
     <div class="container-xl my-5 pt-5">
-        <h1>${this.msg.home.h1}</h1>
+        <h1>Login or register</h1>
         <div class="row">
             <div class="col-md my-5 mx-auto">
-                <h2>${this.msg.signIn.h1}</h2>
+                <h2>Sign in</h2>
                 <section id="section1">
                     <SignIn></SignIn>
                 </section>
             </div>
             <div class="col-md my-5 mx-auto">
-                <h2>${this.msg.signUp.h1}</h2>
+                <h2>Sign up</h2>
                 <section id="section2">
                     <SignUp></SignUp>
                 </section>
