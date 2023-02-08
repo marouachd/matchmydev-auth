@@ -1,19 +1,19 @@
 package co.simplon.matchmydev.auth.dtos;
 
-import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 public class UserAccountCreate {
 
-    @NotEmpty
+    @NotNull
     @Pattern(regexp = "^[A-Z]{2,7}[0-9]{6}")
     private String internalIdentifier;
 
-    @NotEmpty
+    @NotNull
     @Pattern(regexp = "^[A-Za-z]+\\.[A-Za-z]+@[A-Za-z]+\\.[A-Za-z]{2,4}")
     private String internalEmail;
 
-    @NotEmpty
+    @NotNull
     @Pattern(regexp = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[%||!||*]).{8,42}")
     private String password;
 

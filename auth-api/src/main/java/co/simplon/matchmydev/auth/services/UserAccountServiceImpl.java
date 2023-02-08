@@ -32,7 +32,7 @@ public class UserAccountServiceImpl implements UserAccountService {
 	userAccount.setPassword(hash);
 	LocalDateTime createdAt = LocalDateTime.now();
 	userAccount.setCreatedAt(createdAt);
-	userAccount.setActive(true);
+	userAccount.setActive(false);
 	this.userAccounts.save(userAccount);
 
     }
