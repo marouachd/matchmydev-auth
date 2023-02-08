@@ -12,33 +12,34 @@ import co.simplon.matchmydev.auth.entities.UserAccount;
 import co.simplon.matchmydev.auth.repositories.UserAccountRepository;
 
 @Service
-public class UserAccountServiceImpl implements UserAccountService{
-	
-	private UserAccountRepository userAccounts;
-	
-	public UserAccountServiceImpl(UserAccountRepository userAccounts) {
-		
-		this.userAccounts = userAccounts;
-	}
-	
-	@Override
-	public void create(UserAccountCreate inputs) {
-		UserAccount userAccount = new UserAccount();
-		userAccount.setInternalIdentifier(inputs.getInternalIdentifier());
-		userAccount.setInternalEmail(inputs.getInternalEmail());
-		//userAccount.setPassword(inputs.getPassword());
-		String hash = BCrypt.hashpw(inputs.getPassword(), BCrypt.gensalt(10));
-	    userAccount.setPassword(hash);
-		LocalDateTime createdAt = LocalDateTime.now();
-		userAccount.setCreatedAt(createdAt);
-		userAccount.setActive(true);
-		this.userAccounts.save(userAccount);
-		
-	}
+public class UserAccountServiceImpl implements UserAccountService {
 
-	@Override
-	public Collection<UserAccountView> getAll(){
-		return userAccounts.findAllProjectedBy();
-}
+    private UserAccountRepository userAccounts;
+    private final int COST = 10;
+
+    public UserAccountServiceImpl(UserAccountRepository userAccounts) {
+
+	this.userAccounts = userAccounts;
+    }
+
+    @Override
+    public void create(UserAccountCreate inputs) {
+	UserAccount userAccount = new UserAccount();
+	userAccount.setInternalIdentifier(inputs.getInternalIdentifier());
+	userAccount.setInternalEmail(inputs.getInternalEmail());
+	// userAccount.setPassword(inputs.getPassword());
+	String hash = BCrypt.hashpw(inputs.getPassword(), BCrypt.gensalt(COST));
+	userAccount.setPassword(hash);
+	LocalDateTime createdAt = LocalDateTime.now();
+	userAccount.setCreatedAt(createdAt);
+	userAccount.setActive(true);
+	this.userAccounts.save(userAccount);
+
+    }
+
+    @Override
+    public Collection<UserAccountView> getAll() {
+	return userAccounts.findAllProjectedBy();
+    }
 
 }
