@@ -10,7 +10,7 @@ public class AuthWebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
 	registry.addMapping("/useraccount/**")
-		.allowedOrigins("http://localhost:1994")
+		.allowedOrigins("http://localhost:1664")
 		.allowedMethods("POST", "GET");
     }
 
