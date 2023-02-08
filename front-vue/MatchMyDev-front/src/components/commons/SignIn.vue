@@ -1,10 +1,9 @@
 <script>
-import axios from 'axios';
 
 export default {
     methods: {
         async submitForm() {
-            const test = await this.$axios.get('useraccount');
+            const test = await this.$axios.get('user-accounts');
             if (test) {
                 console.log("yeah");
             }
@@ -14,7 +13,7 @@ export default {
 </script>
 
 <template>
-    <form id="signIn" @submit.prevent="submitForm">
+    <form id="sign-in" @submit.prevent="submitForm">
         <div class="mb-3">
             <label for="identifier" class="form-label required">Internal identifier or email</label>
             <input type="email" name="identifier" class="form-control" id="identifier">
@@ -27,47 +26,5 @@ export default {
     </form>
 </template>
 <style scoped>
-.btn-outline-dark {
-    background-color: var(--main-grey-color);
-    border-color: var(--main-grey-color);
-    float: right;
 
-    color: var(--main-dark-color);
-    letter-spacing: 0.1rem;
-}
-
-.btn-outline-dark:hover {
-    background-color: var(--second-grey-color);
-    box-shadow: 0px 0px 5px 4px var(--second-grey-color);
-    color: var(--main-dark-color);
-}
-
-.btn-outline-dark:focus {
-    background-color: var(--second-grey-color);
-    box-shadow: 0px 0px 5px 4px var(--second-grey-color) !important;
-    color: var(--main-dark-color);
-}
-
-.btn-wrap {
-    min-width: 120px;
-}
-
-
-
-.required::after {
-    color: var(--main-red-color);
-    font-weight: bold;
-    content: " *";
-}
-
-.form-control:focus {
-    border: none;
-    box-shadow: 0px 0px 5px 4px var(--second-grey-color);
-}
-
-
-
-.form-label {
-    font-weight: 600;
-}
 </style>
