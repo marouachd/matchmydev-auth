@@ -20,11 +20,13 @@ import co.simplon.matchmydev.auth.services.UserAccountService;
 @RestController
 @RequestMapping("/user-accounts")
 @CrossOrigin
+
 public class UserAccountController {
 
     private UserAccountService service;
 
     public UserAccountController(UserAccountService service) {
+
 	this.service = service;
 
     }
