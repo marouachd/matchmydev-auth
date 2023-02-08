@@ -14,7 +14,7 @@ public class UserAccountCreate {
     private String internalEmail;
 
     @NotNull
-    @Pattern(regexp = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[%||!||*]).{8,42}")
+    @Pattern(regexp = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[%||!||*])(?!.* ).{8,42}")
     private String password;
 
     public UserAccountCreate() {

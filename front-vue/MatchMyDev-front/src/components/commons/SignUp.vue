@@ -4,7 +4,7 @@ import { required, helpers } from '@vuelidate/validators'
 
 const identifierValidator = helpers.regex(/[A-Z]{2,7}[0-9]{6}/);
 const emailValidator = helpers.regex(/[A-Za-z]+\.[A-Za-z]+@[A-Za-z]+\.[A-Za-z]{2,4}$/);
-const passwordValidator = helpers.regex(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[%||!||*]).{8,42}/);
+const passwordValidator = helpers.regex(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[%||!||*])(?!.* ).{8,42}/);
 
 export default {
     setup() {
