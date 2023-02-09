@@ -1,7 +1,10 @@
 <script setup>
-// import AccountList from './commons/AccountList.vue';
+import AccountsList from './commons/AccountsList.vue';
 </script>
 
 <template>
-    <!-- <AccountList></AccountList> -->
+    <div class="container-xl my-5 pt-5">
+        <h1>Accounts list</h1>
+        <AccountsList></AccountsList>
+    </div>
 </template>
