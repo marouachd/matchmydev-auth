@@ -18,7 +18,6 @@ import co.simplon.matchmydev.auth.services.UserAccountService;
 
 @RestController
 @RequestMapping("/user-accounts")
-
 public class UserAccountController {
 
     private UserAccountService service;

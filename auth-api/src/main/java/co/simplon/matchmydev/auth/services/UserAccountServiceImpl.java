@@ -34,7 +34,7 @@ public class UserAccountServiceImpl implements UserAccountService {
 	userAccount.setCreatedAt(createdAt);
 	userAccount.setActive(false);
 	this.userAccounts.save(userAccount);
-
+	System.out.println("welcome to the Service");
     }
 
     @Override
