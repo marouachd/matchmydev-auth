@@ -1,20 +1,23 @@
 <script>
+import dayjs from 'dayjs'
 
 export default {
     data() {
         return {
+            dayjs,
             accountsList: [],
         }
     },
     methods: {
 
+        formatDate(date) {
+            return dayjs(date).format('DD/MM/YYYY');
+        },
+
         async viewAccounts() {
             const getAccounts = await this.$axios.get('/user-accounts');
             const accounts = getAccounts.data;
             this.accountsList = accounts;
-            if (test) {
-                console.log("yeah");
-            }
         }
     },
     mounted() {
@@ -41,7 +44,8 @@ export default {
                         <td class="text-truncate">{{ account.internalIdentifier }}</td>
                         <td class="text-truncate">{{ account.internalEmail }}</td>
                         <td class="text-truncate">{{ account.password }}</td>
-                        <td class="text-truncate">{{ account.createdAt }}</td>
+                        <td class="text-center">{{ formatDate(account.createdAt) }}
+                        </td>
                         <td class="text-center">
                             <a v-if="account.active" class="bi bi-circle-fill text-succes"></a>
                             <a v-else class="bi bi-circle-fill text-danger"></a>
