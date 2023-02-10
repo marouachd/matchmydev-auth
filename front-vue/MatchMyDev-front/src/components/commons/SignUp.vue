@@ -15,19 +15,18 @@ export default {
     data() {
         return {
             inputs: {
-                // set Null when finish
-                internalIdentifier: "FMARSHA010670",
-                internalEmail: "first.last@domain.com",
-                password: "Garfield2022!"
+                internalIdentifier: null,
+                internalEmail: null,
+                password: null
             }
         }
     },
     validations() {
         return {
             inputs: {
-                internalIdentifier: { required, identifierValidator: helpers.withMessage("Should respect SG pattern", identifierValidator) },
-                internalEmail: { required, emailValidator: helpers.withMessage("Should be a valid email", emailValidator) },
-                password: { required, passwordValidator: helpers.withMessage("length [8, 42] + at least 1 upper and lower letter, at least 1 digit, at least 1 of %*!", passwordValidator) }
+                internalIdentifier: { required, identifierValidator },
+                internalEmail: { required, emailValidator },
+                password: { required, passwordValidator }
             }
         }
     },
