@@ -6,6 +6,7 @@ import java.util.Collection;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Service;
 
+import co.simplon.matchmydev.auth.dtos.SignInDto;
 import co.simplon.matchmydev.auth.dtos.UserAccountCreate;
 import co.simplon.matchmydev.auth.dtos.UserAccountView;
 import co.simplon.matchmydev.auth.entities.UserAccount;
@@ -40,6 +41,26 @@ public class UserAccountServiceImpl implements UserAccountService {
     @Override
     public Collection<UserAccountView> getAll() {
 	return userAccounts.findAllProjectedBy();
+    }
+
+    @Override
+    public String signIn(SignInDto credentials) {
+
+	UserAccount userAccount = userAccounts
+		.findByInternalEmailOrInternalIdentifier(
+			credentials.getEmailOrIdentifier(),
+			credentials.getEmailOrIdentifier());
+	if (userAccount != null) {
+	    String hash = userAccount.getPassword();
+	    String candidate = credentials.getPassword();
+	    if (BCrypt.checkpw(candidate, hash)) {
+		return "This account exist and password match";
+	    } else {
+		return "This account doesn't exist or password doesn't match";
+	    }
+	} else {
+	    return "This account doesn't exist or password doesn't match";
+	}
     }
 
 }
