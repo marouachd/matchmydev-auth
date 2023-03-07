@@ -1,6 +1,6 @@
 <script>
 import { useVuelidate } from '@vuelidate/core'
-import { required, helpers } from '@vuelidate/validators'
+import { required, helpers, minValue } from '@vuelidate/validators'
 
 const identifierValidator = helpers.regex(/[A-Z]{2,7}[0-9]{6}/);
 const emailValidator = helpers.regex(/[A-Za-z]+\.[A-Za-z]+@[A-Za-z]+\.[A-Za-z]{2,4}$/);
@@ -19,7 +19,7 @@ export default {
                 internalIdentifier: "FMARSHA010670",
                 internalEmail: "first.last@domain.com",
                 password: "Garfield2022!",
-                role: ""
+                roleId: 0
             }
         }
     },
@@ -29,7 +29,7 @@ export default {
                 internalIdentifier: { required, identifierValidator: helpers.withMessage("Should respect SG pattern", identifierValidator) },
                 internalEmail: { required, emailValidator: helpers.withMessage("Should be a valid email", emailValidator) },
                 password: { required, passwordValidator: helpers.withMessage("length [8, 42] + at least 1 upper and lower letter, at least 1 digit, at least 1 of %*!", passwordValidator) },
-                role: { required }
+                roleId: { minValue: minValue(1) }
             }
         }
     },
@@ -91,8 +91,9 @@ export default {
                     </div>
                     <div class="mb-3">
                         <label for="userRole" class="form-label required">Role</label>
-                        <select v-model="role" class="form-select" aria-label="Default select example"
-                            :class="{ 'is-invalid': validator.inputs.role.$error }">
+                        <select v-model="inputs.roleId" class="form-select" aria-label="Default select example"
+                            :class="{ 'is-invalid': validator.inputs.roleId.$error }">
+                            <option value="0">choose a role</option>
                             <option value="1">ROLE_DEV</option>
                             <option value="2">ROLE_TECH_LEAD</option>
                             <option value="3">ROLE_MANAGER</option>
