@@ -7,6 +7,6 @@ CREATE TABLE user_accounts (
 	internal_email VARCHAR (255) UNIQUE NOT NULL,
 	password CHAR(60) NOT NULL,
 	created_at TIMESTAMP NOT NULL,
-	active BOOLEAN 
+	active BOOLEAN NOT NULL
 	
-)
+);
