@@ -34,7 +34,15 @@ public class UserAccountController {
     public void create(@Valid @RequestBody UserAccountCreate inputs) {
 
 	service.create(inputs);
+
+    }
+
+    @PostMapping("/create-account")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void createAccount(@Valid @RequestBody UserAccountCreate inputs) {
+	service.create(inputs);
 	System.out.println("juliette est gentille :D");
+	System.out.println(inputs);
 
     }
 

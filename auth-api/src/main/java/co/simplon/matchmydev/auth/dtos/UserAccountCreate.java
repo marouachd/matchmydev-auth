@@ -2,6 +2,7 @@ package co.simplon.matchmydev.auth.dtos;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Positive;
 
 public class UserAccountCreate {
 
@@ -16,6 +17,18 @@ public class UserAccountCreate {
     @NotNull
     @Pattern(regexp = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[%||!||*])(?!.* ).{8,42}")
     private String password;
+
+    @NotNull
+    @Positive
+    private Long roleId;
+
+    public Long getRoleId() {
+	return roleId;
+    }
+
+    public void setRoleId(Long roleId) {
+	this.roleId = roleId;
+    }
 
     public UserAccountCreate() {
 	super();
@@ -47,9 +60,9 @@ public class UserAccountCreate {
 
     @Override
     public String toString() {
-	return "AuthController [internalIdentifier=" + internalIdentifier
+	return "UserAccountCreate [internalIdentifier=" + internalIdentifier
 		+ ", internalEmail=" + internalEmail + ", password=" + password
-		+ "]";
+		+ ", roleId=" + roleId + "]";
     }
 
 }
