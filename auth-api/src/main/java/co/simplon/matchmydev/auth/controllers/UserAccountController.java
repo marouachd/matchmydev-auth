@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import co.simplon.matchmydev.auth.dtos.SignInDto;
 import co.simplon.matchmydev.auth.dtos.UserAccountCreate;
 import co.simplon.matchmydev.auth.dtos.UserAccountView;
 import co.simplon.matchmydev.auth.services.UserAccountService;
@@ -35,6 +36,11 @@ public class UserAccountController {
 	service.create(inputs);
 	System.out.println("juliette est gentille :D");
 
+    }
+
+    @PostMapping("/sign-in")
+    public String signIn(@Valid @RequestBody SignInDto inputs) {
+	return service.signIn(inputs);
     }
 
     @GetMapping
