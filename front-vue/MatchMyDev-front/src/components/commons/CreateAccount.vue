@@ -93,7 +93,6 @@ export default {
                         <label for="userRole" class="form-label required">Role</label>
                         <select v-model="role" class="form-select" aria-label="Default select example"
                             :class="{ 'is-invalid': validator.inputs.role.$error }">
-                            <option disabled value="">Choose a role</option>
                             <option value="1">ROLE_DEV</option>
                             <option value="2">ROLE_TECH_LEAD</option>
                             <option value="3">ROLE_MANAGER</option>
