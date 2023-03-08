@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import co.simplon.matchmydev.auth.dtos.SignInDto;
+import co.simplon.matchmydev.auth.dtos.SignUpDto;
 import co.simplon.matchmydev.auth.dtos.UserAccountCreate;
 import co.simplon.matchmydev.auth.dtos.UserAccountView;
 import co.simplon.matchmydev.auth.services.UserAccountService;
@@ -24,25 +25,21 @@ public class UserAccountController {
     private UserAccountService service;
 
     public UserAccountController(UserAccountService service) {
-
 	this.service = service;
 
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void create(@Valid @RequestBody UserAccountCreate inputs) {
-
-	service.create(inputs);
-
+    public void createSignUp(@Valid @RequestBody SignUpDto inputs) {
+	service.createSignUp(inputs);
     }
 
     @PostMapping("/create-account")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void createAccount(@Valid @RequestBody UserAccountCreate inputs) {
-	service.create(inputs);
+	service.createAccount(inputs);
 	System.out.println("juliette est gentille :D");
-	System.out.println(inputs);
 
     }
 

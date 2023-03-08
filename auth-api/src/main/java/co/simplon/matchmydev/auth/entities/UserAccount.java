@@ -4,6 +4,9 @@ import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -23,56 +26,71 @@ public class UserAccount extends AbstractEntity {
 
     @Column(name = "created_at")
     private LocalDateTime createdAt;
+    
+    @ManyToOne
+    @JoinColumn(name="role_id")
+    private Role role;
 
     public UserAccount() {
 	super();
     }
 
-    public String getInternalIdentifier() {
-	return internalIdentifier;
-    }
+	public Role getRole() {
+		return role;
+	}
 
-    public void setInternalIdentifier(String internalIdentifier) {
-	this.internalIdentifier = internalIdentifier;
-    }
+	public void setRole(Role role) {
+		this.role = role;
+	}
 
-    public String getInternalEmail() {
-	return internalEmail;
-    }
+	
 
-    public void setInternalEmail(String internalEmail) {
-	this.internalEmail = internalEmail;
-    }
+	public String getInternalIdentifier() {
+		return internalIdentifier;
+	}
 
-    public String getPassword() {
-	return password;
-    }
+	public void setInternalIdentifier(String internalIdentifier) {
+		this.internalIdentifier = internalIdentifier;
+	}
 
-    public void setPassword(String password) {
-	this.password = password;
-    }
+	public String getInternalEmail() {
+		return internalEmail;
+	}
 
-    public boolean isActive() {
-	return active;
-    }
+	public void setInternalEmail(String internalEmail) {
+		this.internalEmail = internalEmail;
+	}
 
-    public void setActive(boolean active) {
-	this.active = active;
-    }
+	public String getPassword() {
+		return password;
+	}
 
-    public LocalDateTime getCreatedAt() {
-	return createdAt;
-    }
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
-    public void setCreatedAt(LocalDateTime createdAt) {
-	this.createdAt = createdAt;
-    }
+	public boolean isActive() {
+		return active;
+	}
 
-    @Override
-    public String toString() {
-	return "UserAccount [internalIdentifier=" + internalIdentifier
-		+ ", internalEmail=" + internalEmail + ", password=" + password
-		+ ", active=" + active + ", createdAt=" + createdAt + "]";
-    }
+	public void setActive(boolean active) {
+		this.active = active;
+	}
+
+	public LocalDateTime getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(LocalDateTime createdAt) {
+		this.createdAt = createdAt;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "UserAccount [internalIdentifier=" + internalIdentifier + ", internalEmail=" + internalEmail
+				+ ", password=" + password + ", active=" + active + ", createdAt=" + createdAt + ", role=" + role + "]";
+	}
 
 }
