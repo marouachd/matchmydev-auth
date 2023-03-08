@@ -18,6 +18,18 @@ export default {
             const getAccounts = await this.$axios.get('/user-accounts');
             const accounts = getAccounts.data;
             this.accountsList = accounts;
+        },
+        async updateStatus(id, isActive) {
+            const payload = {
+                active: isActive
+            }
+            const resp = await this.$axios.patch(`/admin/status/${id}`, payload);
+            if (resp.status === 204) {
+                console.log('status is updated !')
+                this.accountsList[id - 1].active = !this.accountsList[id - 1].active
+            } else {
+                console.error("this is an error : " + resp)
+            }
         }
     },
     mounted() {
@@ -41,14 +53,15 @@ export default {
                 </thead>
                 <tbody id="accountsList" v-for="account in accountsList">
                     <tr>
+                        <td class="text-truncate">{{ account.id }}</td>
                         <td class="text-truncate">{{ account.internalIdentifier }}</td>
                         <td class="text-truncate">{{ account.internalEmail }}</td>
                         <td class="text-truncate">{{ account.password }}</td>
                         <td class="text-center">{{ formatDate(account.createdAt) }}
                         </td>
-                        <td class="text-center">
-                            <a v-if="account.active" class="bi bi-circle-fill text-succes"></a>
-                            <a v-else class="bi bi-circle-fill text-danger"></a>
+                        <td class="text-center" @click="updateStatus(account.id, account.active)">
+                            <a v-if="account.active" class="bi bi-circle-fill text-success" href="#"></a>
+                            <a v-else class="bi bi-circle-fill text-danger" href="#"></a>
                         </td>
                     </tr>
                 </tbody>
@@ -56,6 +69,4 @@ export default {
         </div>
     </div>
 </template>
-<style scoped>
-
-</style>
+<style scoped></style>
