@@ -8,6 +8,7 @@ import co.simplon.matchmydev.auth.dtos.UserAccountView;
 
 public interface UserAccountService {
     void create(UserAccountCreate inputs);
+    void createAccount(UserAccountCreate inputs);
 
     Collection<UserAccountView> getAll();
 

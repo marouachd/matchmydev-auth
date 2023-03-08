@@ -9,20 +9,41 @@ import org.springframework.stereotype.Service;
 import co.simplon.matchmydev.auth.dtos.SignInDto;
 import co.simplon.matchmydev.auth.dtos.UserAccountCreate;
 import co.simplon.matchmydev.auth.dtos.UserAccountView;
+import co.simplon.matchmydev.auth.entities.Role;
 import co.simplon.matchmydev.auth.entities.UserAccount;
+import co.simplon.matchmydev.auth.repositories.RoleRepository;
 import co.simplon.matchmydev.auth.repositories.UserAccountRepository;
 
 @Service
 public class UserAccountServiceImpl implements UserAccountService {
 
+	private RoleRepository roles;
     private UserAccountRepository userAccounts;
     private final int COST = 10;
 
-    public UserAccountServiceImpl(UserAccountRepository userAccounts) {
+    public UserAccountServiceImpl(UserAccountRepository userAccounts, RoleRepository roles) {
 
 	this.userAccounts = userAccounts;
+	this.roles=roles;
     }
 
+    @Override
+    public void createAccount(UserAccountCreate inputs) {
+	UserAccount userAccount = new UserAccount();
+	userAccount.setInternalIdentifier(inputs.getInternalIdentifier());
+	userAccount.setInternalEmail(inputs.getInternalEmail());
+	String hash = BCrypt.hashpw(inputs.getPassword(), BCrypt.gensalt(COST));
+	userAccount.setPassword(hash);
+	LocalDateTime createdAt = LocalDateTime.now();
+	Long roleId=inputs.getRoleId();
+	Role role = roles.getReferenceById(roleId);
+	userAccount.setRole(role);
+	userAccount.setCreatedAt(createdAt);
+	userAccount.setActive(false);
+	this.userAccounts.save(userAccount);
+	System.out.println(userAccounts);
+	
+    }
     @Override
     public void create(UserAccountCreate inputs) {
 	UserAccount userAccount = new UserAccount();
@@ -36,7 +57,10 @@ public class UserAccountServiceImpl implements UserAccountService {
 	userAccount.setActive(false);
 	this.userAccounts.save(userAccount);
 	System.out.println("welcome to the Service");
+	
     }
+    
+ 
 
     @Override
     public Collection<UserAccountView> getAll() {

@@ -42,7 +42,7 @@ public class UserAccountController {
     public void createAccount(@Valid @RequestBody UserAccountCreate inputs) {
 	service.create(inputs);
 	System.out.println("juliette est gentille :D");
-	System.out.println(inputs);
+	
 
     }
 
