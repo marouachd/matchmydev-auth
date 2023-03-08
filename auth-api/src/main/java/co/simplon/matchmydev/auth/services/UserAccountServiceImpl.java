@@ -64,7 +64,7 @@ public class UserAccountServiceImpl implements UserAccountService {
 
     @Override
     public Collection<UserAccountView> getAll() {
-	return userAccounts.findAllProjectedBy();
+	return userAccounts.findAllProjectedByOrderById();
     }
 
     @Override

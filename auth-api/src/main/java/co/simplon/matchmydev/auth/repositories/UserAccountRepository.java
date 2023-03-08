@@ -9,9 +9,9 @@ import co.simplon.matchmydev.auth.entities.UserAccount;
 
 public interface UserAccountRepository
 	extends JpaRepository<UserAccount, Long> {
-    Collection<UserAccountView> findAllProjectedBy();
+    Collection<UserAccountView> findAllProjectedByOrderById();
 
-    UserAccount findByInternalEmailOrInternalIdentifier(
-	    String email, String identifier);
+    UserAccount findByInternalEmailOrInternalIdentifier(String email,
+	    String identifier);
 
 }
