@@ -14,6 +14,7 @@ export default {
     },
     data() {
         return {
+            roles: [],
             inputs: {
                 // set Null when finish
                 internalIdentifier: "FMARSHA010670",
@@ -25,6 +26,7 @@ export default {
     },
     validations() {
         return {
+
             inputs: {
                 internalIdentifier: { required, identifierValidator: helpers.withMessage("Should respect SG pattern", identifierValidator) },
                 internalEmail: { required, emailValidator: helpers.withMessage("Should be a valid email", emailValidator) },
@@ -45,7 +47,20 @@ export default {
                     console.log("Server Error");
                 }
             }
+        },
+        async initRoles() {
+
+            const resp = await this.$axios.get('/roles');
+            this.roles = resp.data;
+
+
+
+
         }
+    },
+    beforeMount() {
+        this.initRoles();
+
     }
 }
 </script>
@@ -93,10 +108,10 @@ export default {
                         <label for="userRole" class="form-label required">Role</label>
                         <select v-model="inputs.roleId" class="form-select" aria-label="Default select example"
                             :class="{ 'is-invalid': validator.inputs.roleId.$error }">
-                            <option value="0">choose a role</option>
-                            <option value="1">ROLE_DEV</option>
-                            <option value="2">ROLE_TECH_LEAD</option>
-                            <option value="3">ROLE_MANAGER</option>
+                            <option selected disabled value="0">choose a role</option>
+                            <option v-for="role in roles" :value="role.id"> {{ role.name }}
+                            </option>
+
                         </select>
 
                     </div>
