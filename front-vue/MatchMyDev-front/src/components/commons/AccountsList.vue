@@ -23,7 +23,7 @@ export default {
             const payload = {
                 active: isActive
             }
-            const resp = await this.$axios.patch(`/admin/status/${id}`, payload);
+            const resp = await this.$axios.patch(`/admin/status/${id}/`, payload);
             if (resp.status === 204) {
                 console.log('status is updated !')
                 this.accountsList[id - 1].active = !this.accountsList[id - 1].active
@@ -53,7 +53,6 @@ export default {
                 </thead>
                 <tbody id="accountsList" v-for="account in accountsList">
                     <tr>
-                        <td class="text-truncate">{{ account.id }}</td>
                         <td class="text-truncate">{{ account.internalIdentifier }}</td>
                         <td class="text-truncate">{{ account.internalEmail }}</td>
                         <td class="text-truncate">{{ account.password }}</td>

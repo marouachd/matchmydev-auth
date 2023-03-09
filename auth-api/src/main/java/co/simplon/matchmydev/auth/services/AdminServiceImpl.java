@@ -18,9 +18,7 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public void updateStatus(AccountStatusUpdate inputs, Long id) {
 	UserAccount entity = userAccounts.findById(id).get();
-	System.out.println("Entity = " + entity);
 	entity.setActive(!inputs.getActive());
-	System.out.println("Entity = " + entity);
 	userAccounts.save(entity);
     }
 }
