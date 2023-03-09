@@ -17,16 +17,18 @@ export default {
         async viewAccounts() {
             const getAccounts = await this.$axios.get('/user-accounts');
             const accounts = getAccounts.data;
+            console.log(accounts);
             this.accountsList = accounts;
         },
-        async updateStatus(id, isActive) {
-            const payload = {
-                active: isActive
-            }
-            const resp = await this.$axios.patch(`/admin/status/${id}/`, payload);
+        async updateStatus(id, active) {
+            const resp = await this.$axios.patch(`/admin/account-user/${id}/${active}`);
             if (resp.status === 204) {
-                console.log('status is updated !')
-                this.accountsList[id - 1].active = !this.accountsList[id - 1].active
+                for (let a in this.accountsList) {
+                    let account = this.accountsList[a]
+                    if (account.id == id) {
+                        account.active = !account.active
+                    }
+                }
             } else {
                 console.error("this is an error : " + resp)
             }

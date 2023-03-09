@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import co.simplon.matchmydev.auth.dtos.AccountStatusUpdate;
 import co.simplon.matchmydev.auth.services.AdminService;
 
 @RestController
@@ -23,11 +22,11 @@ public class AdminController {
 	this.service = service;
     }
 
-    @PatchMapping("/status/{id}")
+    @PatchMapping("/account-user/{id}/{active}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void updateStatus(@Valid @RequestBody AccountStatusUpdate inputs,
-	    @PathVariable("id") Long id) {
-	service.updateStatus(inputs, id);
+    public void updateStatus(@Valid @RequestBody @PathVariable("id") Long id,
+	    @PathVariable("active") String active) {
+	service.updateStatus(id, active);
     }
 
 }
