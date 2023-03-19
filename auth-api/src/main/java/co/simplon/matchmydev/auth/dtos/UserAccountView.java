@@ -13,5 +13,7 @@ public interface UserAccountView {
 
     LocalDateTime getCreatedAt();
 
+    String getRoleId();
+
     boolean isActive();
 }
